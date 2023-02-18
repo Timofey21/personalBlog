@@ -1,8 +1,11 @@
 import React from "react";
+import WordWriter from './WordWriter';
 
 const App: React.FC = () => {
-    return <h1>TypeScript is awesome</h1>;
+    return <WordWriter text="Hello, world!" />;
 };
+
+
 
 export default App;
 

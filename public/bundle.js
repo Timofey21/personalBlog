@@ -76,7 +76,17 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
   \************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nconst App = () => {\n    return react_1.default.createElement(\"h1\", null, \"TypeScript is awesome\");\n};\nexports[\"default\"] = App;\n\n\n//# sourceURL=webpack://personalblog/./client/App.tsx?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nconst WordWriter_1 = __importDefault(__webpack_require__(/*! ./WordWriter */ \"./client/WordWriter.tsx\"));\nconst App = () => {\n    return react_1.default.createElement(WordWriter_1.default, { text: \"Hello, world!\" });\n};\nexports[\"default\"] = App;\n\n\n//# sourceURL=webpack://personalblog/./client/App.tsx?");
+
+/***/ }),
+
+/***/ "./client/WordWriter.tsx":
+/*!*******************************!*\
+  !*** ./client/WordWriter.tsx ***!
+  \*******************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+eval("\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    var desc = Object.getOwnPropertyDescriptor(m, k);\n    if (!desc || (\"get\" in desc ? !m.__esModule : desc.writable || desc.configurable)) {\n      desc = { enumerable: true, get: function() { return m[k]; } };\n    }\n    Object.defineProperty(o, k2, desc);\n}) : (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    o[k2] = m[k];\n}));\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\n}) : function(o, v) {\n    o[\"default\"] = v;\n});\nvar __importStar = (this && this.__importStar) || function (mod) {\n    if (mod && mod.__esModule) return mod;\n    var result = {};\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\n    __setModuleDefault(result, mod);\n    return result;\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst react_1 = __importStar(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nconst WordWriter = ({ text }) => {\n    const [currentWord, setCurrentWord] = (0, react_1.useState)('');\n    (0, react_1.useEffect)(() => {\n        let currentIndex = 0;\n        const intervalId = setInterval(() => {\n            setCurrentWord(text.slice(0, currentIndex + 1));\n            currentIndex++;\n            if (currentIndex === text.length) {\n                clearInterval(intervalId);\n            }\n        }, 1000);\n        return () => {\n            clearInterval(intervalId);\n        };\n    }, [text]);\n    return react_1.default.createElement(\"p\", null, currentWord);\n};\nexports[\"default\"] = WordWriter;\n\n\n//# sourceURL=webpack://personalblog/./client/WordWriter.tsx?");
 
 /***/ }),
 
